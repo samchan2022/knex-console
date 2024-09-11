@@ -16,17 +16,10 @@ To start the interactive console, run:
 
 ## Configuration
 
-To configure `knex-console`, you need to create a `.env` file in your home directory under `~/.knex-console`. This file should contain your database connection details.
+To configure `knex-console`, you need to create a `./knex-console.env` file in your home directory. This file should contain your database connection details.
 
-1. **Create Configuration Directory**
-
-   First, create the configuration directory:
-
-   ```bash
-   mkdir -p ~/.knex-console
-   ```
-2. **Create .env File**
-  Inside the `~/.knex-console` directory, create a `.env` file with the following content:
+1. **Create .knex-console.env File**
+  Inside the home directory, create a `.knex-console.env` file with the following content:
   
   ```
   DB_HOST=localhost
