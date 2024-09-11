@@ -49,6 +49,7 @@ async function evalAsync(cmd, context, filename, callback) {
     callback(error);
   }
 }
+console.log('Knex interactive console is ready. Type `.exit` to quit.');
 
 // Start REPL
 const replServer = repl.start({
@@ -65,5 +66,5 @@ replServer.on('exit', () => {
   db.destroy(); // Close the database connection
 });
 
-console.log('Knex interactive console is ready. Type `.exit` to quit.');
+
 
