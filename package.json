@@ -1,6 +1,6 @@
 {
   "name": "knex-console",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An interactive REPL for Knex",
   "main": "index.js",
   "bin": {
