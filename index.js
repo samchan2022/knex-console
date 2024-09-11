@@ -3,40 +3,19 @@ const fs = require('fs');
 const path = require('path');
 const knex = require('knex');
 const repl = require('repl');
-require('dotenv').config();
+require('dotenv').config({ path: path.resolve(process.env.HOME || process.env.USERPROFILE, '.knex-console/.env') });
 
-// Determine the path to the configuration file
-const configFilePath = path.resolve(process.env.HOME || process.env.USERPROFILE, '.knex-console');
-
-// Default configuration
-let dbConfig = {
+// Default configuration for PostgreSQL
+const dbConfig = {
   client: 'pg',
   connection: {
-    host: 'localhost',
-    user: 'your_user',
-    password: 'your_password',
-    database: 'your_database',
-    port: 5432
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'postgres',
+    password: process.env.DB_PASSWORD || 'postgres',
+    database: process.env.DB_NAME || 'postgres',
+    port: parseInt(process.env.DB_PORT, 10) || 5432 // default PostgreSQL port
   }
 };
-
-// Load configuration from ~/.knex-console if it exists
-if (fs.existsSync(configFilePath)) {
-  try {
-    const fileConfig = JSON.parse(fs.readFileSync(configFilePath, 'utf8'));
-    dbConfig = {
-      ...dbConfig,
-      connection: {
-        ...dbConfig.connection,
-        ...fileConfig
-      }
-    };
-  } catch (error) {
-    console.error('Error reading or parsing the configuration file:', error);
-  }
-} else {
-  console.warn(`Configuration file not found at ${configFilePath}. Using default configuration.`);
-}
 
 // Initialize Knex
 const db = knex(dbConfig);
@@ -51,6 +30,7 @@ async function evalAsync(cmd, context, filename, callback) {
   }
 }
 
+// Log message before starting REPL
 console.log('Knex interactive console is ready. Type `.exit` to quit.');
 
 // Start REPL
