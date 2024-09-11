@@ -16,15 +16,26 @@ To start the interactive console, run:
 
 ## Configuration
 
-To configure `knex-console`, create a `~/.knex-console` file in your home directory with the following fields:
+To configure `knex-console`, you need to create a `.env` file in your home directory under `~/.knex-console`. This file should contain your database connection details.
 
-- `host`: The hostname of your database server (e.g., `localhost`).
-- `user`: The username for your database connection.
-- `password`: The password for your database connection.
-- `database`: The name of the database to connect to.
-- `port`: The port number your database server is listening on (e.g., `5432` for PostgreSQL).
+1. **Create Configuration Directory**
 
-The file should be formatted in JSON. If the configuration file is not found, default values will be used.
+   First, create the configuration directory:
+
+   ```bash
+   mkdir -p ~/.knex-console
+   ```
+2. **Create .env File**
+  Inside the `~/.knex-console` directory, create a `.env` file with the following content:
+  
+  ```
+  DB_HOST=localhost
+  DB_USER=your_username
+  DB_PASSWORD=your_password
+  DB_NAME=your_database
+  DB_PORT=5432
+  ```
+  Replace your_username, your_password, your_database, and adjust the DB_HOST and DB_PORT as needed for your database setup.
 
 ## License
 
