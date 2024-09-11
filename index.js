@@ -13,9 +13,10 @@ let dbConfig = {
   client: 'pg',
   connection: {
     host: 'localhost',
-    user: 'postgres',
-    password: 'postgres',
-    database: 'postgres'
+    user: 'your_user',
+    password: 'your_password',
+    database: 'your_database',
+    port: 5432
   }
 };
 
@@ -49,6 +50,7 @@ async function evalAsync(cmd, context, filename, callback) {
     callback(error);
   }
 }
+
 console.log('Knex interactive console is ready. Type `.exit` to quit.');
 
 // Start REPL
@@ -65,6 +67,4 @@ replServer.context.knex = db;
 replServer.on('exit', () => {
   db.destroy(); // Close the database connection
 });
-
-
 
