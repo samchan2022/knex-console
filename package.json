@@ -1,18 +1,23 @@
 {
   "name": "knex-console",
   "version": "1.0.0",
-  "description": "An interactive console for Knex.js",
+  "description": "An interactive REPL for Knex",
   "main": "index.js",
   "bin": {
-    "knex-console": "./index.js"
+    "knex-console": "index.js"
   },
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.0",
     "knex": "^2.0.0",
     "pg": "^8.0.0"
-  }
+  },
+  "bin": {
+    "knex-console": "./index.js"
+  },
+  "author": "sam chan",
+  "license": "MIT"
 }
 
