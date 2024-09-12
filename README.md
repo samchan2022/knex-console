@@ -22,6 +22,7 @@ To configure `knex-console`, you need to create a `./knex-console.env` file in y
   Inside the home directory, create a `.knex-console.env` file with the following content:
   
   ```
+  DB_CLIENT=pg
   DB_HOST=localhost
   DB_USER=your_username
   DB_PASSWORD=your_password
