@@ -4,7 +4,7 @@
   "description": "An interactive REPL for Knex",
   "main": "index.js",
   "bin": {
-    "knex-console": "index.js"
+    "knex-console": "./index.js"
   },
   "scripts": {
     "start": "node index.js"
@@ -12,12 +12,9 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "knex": "^2.0.0",
+    "mysql2": "^3.11.2",
     "pg": "^8.0.0"
-  },
-  "bin": {
-    "knex-console": "./index.js"
   },
   "author": "sam chan",
   "license": "MIT"
 }
-
