@@ -3,6 +3,7 @@
 An interactive console for Knex.js.
 
 ## Installation
+---
 
 To install `knex-console` globally, use the following npm command:
 
@@ -11,10 +12,26 @@ npm install -g knex-console
 ```
 
 ## Usage
+---
 
-To start the interactive console, run:
+#### To start the interactive console, run:
+
+```
+knex-console
+```
+
+#### Test connection (inside knex-console)
+```
+db.select(1);
+```
+
+#### Response
+```
+[ { '?column?': 1 } ]
+```
 
 ## Configuration
+---
 
 To configure `knex-console`, you need to create a `./knex-console.env` file in your home directory. This file should contain your database connection details.
 
