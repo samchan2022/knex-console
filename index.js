@@ -70,7 +70,7 @@ async function evalAsync(cmd, context, filename, callback) {
 }
 
 // Log message before starting REPL
-console.log('Knex interactive console is ready. Type `.exit` to quit.');
+console.log(`Knex interactive console is ready ( ${ dbClient } ). Type \`.exit\` to quit.`);
 
 // Start REPL
 const replServer = repl.start({
