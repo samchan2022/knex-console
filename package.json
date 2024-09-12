@@ -15,6 +15,17 @@
     "mysql2": "^3.11.2",
     "pg": "^8.0.0"
   },
+  "keywords": [
+    "knex",
+    "database",
+    "console",
+    "CLI",
+    "SQL",
+    "query",
+    "nodejs",
+    "postgres",
+    "mysql"
+  ],
   "author": "sam chan",
   "license": "MIT"
 }
